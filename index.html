@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نوفا بيتزا - أفضل بيتزا في المدينة</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f8f8;
+        }
+        
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/1920/600?random=1') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        
+        .logo {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #ff6b00;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255,107,0,0.5);
+        }
+        
+        nav {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 15px 0;
+        }
+        
+        nav ul li {
+            margin: 0 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ff6b00;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: #fff;
+        }
+        
+        .section {
+            padding: 80px 20px;
+        }
+        
+        .menu {
+            background: #fff;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .pizza-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .pizza-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .pizza-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .pizza-info {
+            padding: 20px;
+        }
+        
+        .pizza-name {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #ff6b00;
+        }
+        
+        .price {
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        .about {
+            background: linear-gradient(135deg, #ff6b00, #ff8c00);
+            color: white;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        footer {
+            background: #222;
+            color: #ddd;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .order-btn {
+            background: #ff6b00;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.3s;
+        }
+        
+        .order-btn:hover {
+            background: #e55a00;
+            transform: scale(1.05);
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">نوفا</div>
+        <h1>بيتزا نوفا</h1>
+        <p style="font-size: 1.5rem; margin-top: 20px;">طعم إيطالي أصيل في كل لقمة 🔥</p>
+        <button onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})" class="order-btn">اطلب الآن</button>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#menu">القائمة</a></li>
+            <li><a href="#about">عنّا</a></li>
+            <li><a href="#gallery">معرض الصور</a></li>
+            <li><a href="#contact">اتصل بنا</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h2>مرحباً بك في نوفا بيتزا</h2>
+        <p style="font-size: 1.3rem; max-width: 700px; margin: 20px auto;">نستخدم أجود المكونات الطازجة لنقدم لك ألذ بيتزا في المدينة. مصنوعة بحب وعناية.</p>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section menu">
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 50px; color: #ff6b00;">قائمتنا المميزة</h2>
+            
+            <div class="menu-grid">
+                <!-- Pizza 1 -->
+                <div class="pizza-card">
+                    <img src="https://picsum.photos/400/250?random=2" alt="مارغريتا">
+                    <div class="pizza-info">
+                        <h3 class="pizza-name">بيتزا مارغريتا</h3>
+                        <p>صلصة طماطم، جبنة موتزاريلا طازجة، ريحان طازج</p>
+                        <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+                            <span class="price">٣٥ ريال</span>
+                            <button onclick="addToCart(this)" style="background:#ff6b00; color:white; border:none; padding:8px 20px; border-radius:30px; cursor:pointer;">أضف للسلة</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pizza 2 -->
+                <div class="pizza-card">
+                    <img src="https://picsum.photos/400/250?random=3" alt="بيبروني">
+                    <div class="pizza-info">
+                        <h3 class="pizza-name">بيتزا بيبروني</h3>
+                        <p>بيبروني إيطالي، جبنة موتزاريلا، صلصة طماطم</p>
+                        <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+                            <span class="price">٤٥ ريال</span>
+                            <button onclick="addToCart(this)" style="background:#ff6b00; color:white; border:none; padding:8px 20px; border-radius:30px; cursor:pointer;">أضف للسلة</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pizza 3 -->
+                <div class="pizza-card">
+                    <img src="https://picsum.photos/400/250?random=4" alt="سوبرمييت">
+                    <div class="pizza-info">
+                        <h3 class="pizza-name">بيتزا سوبر ميت</h3>
+                        <p>لحم بقري، دجاج، بيبروني، فلفل، جبنة</p>
+                        <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+                            <span class="price">٥٥ ريال</span>
+                            <button onclick="addToCart(this)" style="background:#ff6b00; color:white; border:none; padding:8px 20px; border-radius:30px; cursor:pointer;">أضف للسلة</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="about-content">
+            <h2 style="font-size: 2.5rem; margin-bottom: 30px;">قصتنا</h2>
+            <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto 30px;">
+                نوفا بيتزا هي علامة تجارية سعودية تأسست عام ٢٠٢٣، تهدف إلى تقديم تجربة بيتزا إيطالية أصيلة بطابع محلي. 
+                نستورد مكوناتنا من أفضل المزارع ونحضر العجينة يومياً.
+            </p>
+            <p style="font-size: 1.2rem;">🍕 طازجة • 🧑‍🍳 مصنوعة بحب • 🚀 توصيل سريع</p>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section" style="background: #f8f8f8;">
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 50px; color: #ff6b00;">معرض الصور</h2>
+            <div class="gallery">
+                <img src="https://picsum.photos/400/300?random=5" alt="بيتزا">
+                <img src="https://picsum.photos/400/300?random=6" alt="بيتزا">
+                <img src="https://picsum.photos/400/300?random=7" alt="مطبخ">
+                <img src="https://picsum.photos/400/300?random=8" alt="فرن">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section" style="background: #fff;">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 30px;">اتصل بنا</h2>
+            <p style="font-size: 1.3rem;">📍 الرياض - حي الملقا</p>
+            <p style="font-size: 1.3rem;">📞 0555 123 456</p>
+            <p style="font-size: 1.3rem;">🕒 مفتوح يومياً من ١١ صباحاً حتى ١٢ منتصف الليل</p>
+            
+            <button onclick="alert('تم إرسال الطلب! سيتم التواصل معك قريباً')" class="order-btn" style="margin-top: 40px;">
+                اطلب توصيل الآن
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; ٢٠٢٦ مطعم بيتزا نوفا. جميع الحقوق محفوظة.</p>
+        <p>صنع بحب لعشاق البيتزا ❤️</p>
+    </footer>
+
+    <script>
+        function addToCart(btn) {
+            const name = btn.parentElement.parentElement.querySelector('.pizza-name').textContent;
+            alert(`تم إضافة ${name} إلى السلة! 🍕`);
+            
+            // Simple animation
+            btn.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                btn.style.transform = 'scale(1)';
+            }, 200);
+        }
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
