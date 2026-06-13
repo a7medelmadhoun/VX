@@ -1,0 +1,38 @@
+workflows:
+  android-workflow:
+    name: Android Build
+    instance_type: mac_mini_m2
+    environment:
+      groups:
+        - android_credentials
+      vars:
+        PACKAGE_NAME: "com.aistudio.vxcrypto.vxlpzt"
+      android_signing:
+        - VX
+    scripts:
+      - name: Initialize & Fix Wrapper
+        script: |
+          chmod +x gradlew
+          # التأكد من وجود ملف jar وتوافق التوزيعة
+          gradle wrapper --gradle-version 8.9
+          
+      - name: Set up Environment Secrets
+        script: |
+          # توليد ملف .env لاستخدامه في البناء
+          echo "NOWPAYMENTS_API_KEY=${NOWPAYMENTS_API_KEY}" > .env
+          echo "SUPABASE_URL=${SUPABASE_URL}" >> .env
+          echo "SUPABASE_KEY=${SUPABASE_KEY}" >> .env
+          
+      - name: Build Android App
+        script: |
+          ./gradlew assembleDebug --stacktrace --info
+          
+      - name: Run Tests
+        script: |
+          ./gradlew testDebugUnitTest --stacktrace
+    artifacts:
+      - app/build/outputs/apk/**/*.apk
+    publishing:
+      email:
+        recipients:
+          - elmadhoun.a7med@gmail.com

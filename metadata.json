@@ -1,0 +1,6 @@
+{
+  "name": "VX Crypto",
+  "description": "Professional crypto recommendations and AI analysis dashboard with stabilized build configuration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
